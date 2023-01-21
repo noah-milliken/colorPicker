@@ -2,42 +2,33 @@ const colorPicker = document.getElementById('color')
 const getColorBtn = document.getElementById('get-color-btn')
 
 
-
-
 getColorBtn.addEventListener('click', getColor)
-
-function getColor(event) {
+window.onload = function () {
+    colorPicker.value = randomHexValue()
+    getColor()
+}
+function getColor() {
     const mode = document.getElementById('mode-select')
     const selectedMode = mode.value
     let colorSwatch = colorPicker.value
-    console.log(colorSwatch)
     let noHex = colorSwatch.substring(1)
-    fetch(`https://www.thecolorapi.com/id?hex=${noHex}&mode=${selectedMode}`)
+    fetch(`https://www.thecolorapi.com/scheme?hex=${noHex}&mode=${selectedMode}&count=5`)
         .then(res => res.json())
-        .then(json => console.log(json))
+        .then(json => {
+            console.log(json.colors)
+            let colorColumns = document.querySelectorAll('.color-column')
+            let hexCodes = document.querySelectorAll('.hex-code')
+            json.colors.forEach((color, index) => {
+                colorColumns[index].style.backgroundColor = `${color.hex.value}`
+                colorColumns[index].innerHTML = `${color.name.value}`
+                hexCodes[index].innerHTML = `${color.hex.value}`
+            })
+        })
 }
-// colorPicker.addEventListener('change', function (event) {
-//     let colorSwatch = event.target.value
-//     let noHex = colorSwatch.substring(1)
-//     console.log(noHex)
-//     fetch(`https://www.thecolorapi.com/id?hex=${noHex}`)
-//         .then(res => res.json())
-//         .then(json => console.log(json))
 
-// })
+const randomHexValue = () => {
+    let n = (Math.random() * 0xfffff * 1000000).toString(16);
+    return '#' + n.slice(0, 6);
+};
 
-
-
-
-
-
-// let firstCol = document.getElementById('first-column')
-// let secondCol = document.getElementById('second-column')
-// let thirdCol = document.getElementById('third-column')
-// let fourthCol = document.getElementById('fourth-column')
-// let fifthCol = document.getElementById('fifth-column')
-    // firstCol.style.backgroundColor = `${colorSwatch}`
-    // secondCol.style.backgroundColor = `${colorSwatch}`
-    // thirdCol.style.backgroundColor = `${colorSwatch}`
-    // fourthCol.style.backgroundColor = `${colorSwatch}`
-    // fifthCol.style.backgroundColor = `${colorSwatch}`
+console.log(random_hex_color_code())

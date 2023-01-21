@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Smythe&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -12,11 +17,11 @@
     <header>
         <div class="header-container">
             <div class="color-swatch">
-                <input type="color" value="#009900" id="color">
+                <input type="color" value="#009900" id="color" class="color-swatch">
             </div>
             <div class="drop-menu">
                 <form>
-                    <select id='mode-select'>
+                    <select id='mode-select' class="mode-select">
                         <option value="monochrome">monochrome</option>
                         <option value="monochrome-dark">monochrome-dark</option>
                         <option value="monochrome-light">monochrome-light</option>
@@ -28,9 +33,10 @@
                     </select>
                 </form>
             </div>
-        </div>
-        <div class="get-color-button">
-            <button id="get-color-btn">Get Colors</button>
+            <div>
+                <button id="get-color-btn" class="get-color-button">Get Color Scheme</button>
+            </div>
+
         </div>
         </div>
     </header>
@@ -43,11 +49,11 @@
             <div class="color-column" id="fifth-column">color here</div>
         </div>
         <div class="hex-container">
-            <div class="hex-code">#ffffff</div>
-            <div class="hex-code">#ffffff</div>
-            <div class="hex-code">#ffffff</div>
-            <div class="hex-code">#ffffff</div>
-            <div class="hex-code">#ffffff</div>
+            <div class="hex-code" id="first-hex">#ffffff</div>
+            <div class="hex-code" id="second-hex">#ffffff</div>
+            <div class="hex-code" id="third-hex">#ffffff</div>
+            <div class="hex-code" id="fourth-hex">#ffffff</div>
+            <div class="hex-code" id="fifth-hex">#ffffff</div>
         </div>
     </main>
     <script src="index.js"></script>
