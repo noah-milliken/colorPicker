@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="color-swatch">
+                <input type="color" value="#009900" id="color">
+            </div>
+            <div class="drop-menu">
+                <form>
+                    <select id='mode-select'>
+                        <option value="monochrome">monochrome</option>
+                        <option value="monochrome-dark">monochrome-dark</option>
+                        <option value="monochrome-light">monochrome-light</option>
+                        <option value="analogic">analogic</option>
+                        <option value="complement">complement</option>
+                        <option value="analogic-complement">analogic-complement</option>
+                        <option value="triad">triad</option>
+                        <option value="quad">quad</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="get-color-button">
+            <button id="get-color-btn">Get Colors</button>
+        </div>
+        </div>
+    </header>
+    <main>
+        <div class="color-columns">
+            <div class="color-column" id="first-column">color here</div>
+            <div class="color-column" id="second-column">color here</div>
+            <div class="color-column" id="third-column">color here</div>
+            <div class="color-column" id="fourth-column">color here</div>
+            <div class="color-column" id="fifth-column">color here</div>
+        </div>
+        <div class="hex-container">
+            <div class="hex-code">#ffffff</div>
+            <div class="hex-code">#ffffff</div>
+            <div class="hex-code">#ffffff</div>
+            <div class="hex-code">#ffffff</div>
+            <div class="hex-code">#ffffff</div>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>

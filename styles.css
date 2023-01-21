@@ -1,0 +1,43 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+
+.header-container {
+    margin: 1em;
+    width: 90%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+}
+
+.color-columns {
+
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+}
+
+.color-column {
+    height: 80vh;
+}
+
+.color-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: tomato 1px solid;
+}
+
+.hex-container {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+}
