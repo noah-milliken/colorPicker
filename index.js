@@ -1,16 +1,20 @@
 const colorPicker = document.getElementById('color')
 const getColorBtn = document.getElementById('get-color-btn')
 
-const mode = document.getElementById('mode-select')
-const selectedMode = mode.value
+
 
 
 getColorBtn.addEventListener('click', getColor)
-function getColor() {
 
-    console.log(selectedMode)
-    console.log('clicked')
-    console.log(mode)
+function getColor(event) {
+    const mode = document.getElementById('mode-select')
+    const selectedMode = mode.value
+    let colorSwatch = colorPicker.value
+    console.log(colorSwatch)
+    let noHex = colorSwatch.substring(1)
+    fetch(`https://www.thecolorapi.com/id?hex=${noHex}&mode=${selectedMode}`)
+        .then(res => res.json())
+        .then(json => console.log(json))
 }
 // colorPicker.addEventListener('change', function (event) {
 //     let colorSwatch = event.target.value
