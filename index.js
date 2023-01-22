@@ -15,7 +15,6 @@ function getColor() {
     fetch(`https://www.thecolorapi.com/scheme?hex=${noHex}&mode=${selectedMode}&count=5`)
         .then(res => res.json())
         .then(json => {
-            console.log(json.colors)
             let colorColumns = document.querySelectorAll('.color-column')
             let hexCodes = document.querySelectorAll('.hex-code')
             json.colors.forEach((color, index) => {
@@ -30,5 +29,3 @@ const randomHexValue = () => {
     let n = (Math.random() * 0xfffff * 1000000).toString(16);
     return '#' + n.slice(0, 6);
 };
-
-console.log(random_hex_color_code())
